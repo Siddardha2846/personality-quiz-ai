@@ -34,3 +34,15 @@ personality_ai/
 └── index.html # Frontend template
 
 ---
+
+📜 License
+This project is for educational use. Feel free to modify and share!
+
+💡 Future Improvements
+Add more questions for better accuracy
+
+Include more personality categories (e.g., MBTI)
+
+Store results in a database
+
+Deploy to platforms like Heroku or Vercel
