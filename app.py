@@ -13,7 +13,7 @@ ENCODER_FILENAME = "label_encoder.pkl"
 map_ans = {'A': 0, 'B': 1, 'C': 2}
 
 def train_and_save_model():
-    df = pd.read_csv("C:\my VScode\personality_ai\data.csv") 
+    df = pd.read_csv("C:\my VScode\personality_ai\data.csv")
     X = df[['Q1', 'Q2', 'Q3']].apply(lambda col: col.map(map_ans))
     le = LabelEncoder()
     y = le.fit_transform(df['Label'])
