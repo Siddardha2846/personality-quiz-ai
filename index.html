@@ -101,36 +101,58 @@
     <div class="container">
         <h2>🧠 Personality Quiz</h2>
         <form method="post">
-            <!-- Question 1 -->
+            <!-- Q1 -->
             <div class="mb-3">
-                <label class="form-label">Q1: How do you feel in crowds?</label>
+                <label class="form-label">Q1: What is your usual response to being in a crowd or social gathering?</label>
                 <select name="q1" class="form-select" required>
                     <option value="" disabled selected>Select one</option>
-                    <option value="A">Energized</option>
-                    <option value="B">Neutral</option>
-                    <option value="C">Drained</option>
+                    <option value="A">Energized and excited</option>
+                    <option value="B">Depends on the situation</option>
+                    <option value="C">Drained or anxious</option>
                 </select>
             </div>
 
-            <!-- Question 2 -->
+            <!-- Q2 -->
             <div class="mb-3">
-                <label class="form-label">Q2: Do you prefer working in groups or alone?</label>
+                <label class="form-label">Q2: Which working style do you naturally gravitate towards?</label>
                 <select name="q2" class="form-select" required>
                     <option value="" disabled selected>Select one</option>
-                    <option value="A">Groups</option>
-                    <option value="B">Depends</option>
-                    <option value="C">Alone</option>
+                    <option value="A">In teams or groups</option>
+                    <option value="B">Flexible, mix of both</option>
+                    <option value="C">Independently and alone</option>
                 </select>
             </div>
 
-            <!-- Question 3 -->
+            <!-- Q3 -->
             <div class="mb-3">
-                <label class="form-label">Q3: How do you make decisions?</label>
+                <label class="form-label">Q3: What most influences your decision-making process?</label>
                 <select name="q3" class="form-select" required>
                     <option value="" disabled selected>Select one</option>
-                    <option value="A">Logically</option>
-                    <option value="B">Both logic and feeling</option>
-                    <option value="C">Emotionally</option>
+                    <option value="A">Logic and facts</option>
+                    <option value="B">A balance of logic and emotion</option>
+                    <option value="C">Emotions or gut feeling</option>
+                </select>
+            </div>
+
+            <!-- Q4 -->
+            <div class="mb-3">
+                <label class="form-label">Q4: How do you respond to unexpected challenges?</label>
+                <select name="q4" class="form-select" required>
+                    <option value="" disabled selected>Select one</option>
+                    <option value="A">Analyze calmly and find a solution</option>
+                    <option value="B">Seek help or weigh options</option>
+                    <option value="C">React emotionally or feel overwhelmed</option>
+                </select>
+            </div>
+
+            <!-- Q5 -->
+            <div class="mb-3">
+                <label class="form-label">Q5: What motivates you the most in life?</label>
+                <select name="q5" class="form-select" required>
+                    <option value="" disabled selected>Select one</option>
+                    <option value="A">Logic and clear goals</option>
+                    <option value="B">Balance between passion and reason</option>
+                    <option value="C">Emotions and personal connections</option>
                 </select>
             </div>
 
@@ -138,7 +160,7 @@
         </form>
     </div>
 
-    <!-- Modal -->
+    <!-- Result Modal -->
     <div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -150,6 +172,9 @@
                     <p><strong>Personality Type:</strong> {{ personality }}</p>
                     {% if accuracy %}
                         <p><strong>Model Accuracy:</strong> {{ accuracy|round(2) }}%</p>
+                    {% endif %}
+                    {% if description %}
+                        <p>{{ description }}</p>
                     {% endif %}
                 </div>
                 <div class="modal-footer">
